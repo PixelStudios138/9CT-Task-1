@@ -11,7 +11,7 @@ gyro = GyroSensor(Port.S2)
 
 turn_angles = []
 
-def turn_by_angle(angle):
+def turn_by_angle(angle): # function for allowing robot to turn around
     gyro.reset_angle(0)
     if angle > 0:  # clockwise 
         while gyro.angle() < angle:
@@ -23,16 +23,16 @@ def turn_by_angle(angle):
     turn_angles.append(angle)  # Record the turn
 
 def navigate_course():
-    if Color.RED:
+    if Color.RED: # if block is red, it will return to start of course position
       return_to_start()
-    elif Color.YELLOW:
+    elif Color.YELLOW: # if block is yellow, it will return to start of course position
       return_to_start()
-    else:
+    else: # if there is no red or yellow block, it will go straight, turn, and then go through navigation again until blocks are found
       robot.straight(500)        
       turn_by_angle(90)
       navigate_course()
 
-def return_to_start():
+def return_to_start(): # when block is found, it will be taken back to the position where the robot begun.
     for angle in reversed(turn_angles):  # Undo turns in reverse order
         turn_by_angle(-angle)  
     robot.straight(-1200)  
