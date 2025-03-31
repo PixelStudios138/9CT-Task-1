@@ -4,6 +4,19 @@
 
 This markdown file will explain every file in this repository for the assessment task.
 
+## Requirements
+
+For this assessment task, we will need to write a program for the Lego EV3 robot to get it to sort lego bricks using the colour and gyroscopic sensor. It will need to use a colour sensor to stay within the playing field and detect a red block and a yellow block, then use the gyroscopic sensor to move the red and yellow blocks to their designated areas and to navigate around other blocks. The robot should:
+
+- Move forward until an object is detected, or it falls outside the line
+- If it's outside the playing area (shown by a black line), it should turn around and head back in
+- When an object is detected, it should check the colour of it
+- If the colour is red or yellow, it should:
+    - Pick the block up
+    - Put it down in the correct place
+    - Continue navigating
+- If the colour isn't red or yellow, it should ignore that block and navigate around it
+
 ## Tests
 
 The test_cases folder has all the test cases created between the 28th of March and the 19th of May (due date).
