@@ -33,8 +33,8 @@ def navigate_course():
       navigate_course()
 
 def return_to_start(): # when block is found, it will be taken back to the position where the robot begun.
-    for angle in reversed(turn_angles):  # Undo turns in reverse order
+    for angle in reversed(turn_angles):  # reverses its course to start position
         turn_by_angle(-angle)  
-    robot.straight(-1200)  
+    navigate_course()
 
 navigate_course()
