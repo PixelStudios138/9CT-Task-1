@@ -17,6 +17,18 @@ For this assessment task, we will need to write a program for the Lego EV3 robot
     - Continue navigating
 - If the colour isn't red or yellow, it should ignore that block and navigate around it
 
+### Functional Requirements
+
+**Staying in the playing area:** When the robot detects the black line surrounding the playing field, the robot should stop, turn around 180 degrees, and drive straight, which should send it back in  
+  
+**Object Detection:** The robot should use the colour sensor to determine what type of block it sees. If it's red or yellow, it should use its arms to lift up the block and take it to the right spot. Otherwise, it should turn 90 degrees to the left or right, and travel around it.
+
+**Moving:** When none of the above is in use, the robot should travel in a staight line until it detects an obstacle or the black line
+
+### Use Cases
+
+**Scenario:**
+
 ## Tests
 
 The test_cases folder has all the test cases created between the 28th of March and the 19th of May (due date).
