@@ -27,9 +27,33 @@ For this assessment task, we will need to write a program for the Lego EV3 robot
 
 ### Use Cases
 
-**Scenario:**
+**Scenario 1:** The robot is driving around and goes over the black line  
+**Inputs:** The colour sensor detects the black line  
+**Action:** The robot stops, turns 180 degrees and keeps going  
+**Expected Outcome** The robot re-enters the playing field and keeps going  
+  
+**Scenario 2:** The robot is detects a block  
+**Inputs:** The ultrasonic sensor detects the brick, the colour sensor detects the colour  
+**Action:** The robot checks what colour it is, and if it's red or yellow, picks it up and moves it to the designated area, if not, it turns 90 degrees and keeps going  
+**Expected Outcome** The robot sorts the block if it's red or yellow, and ingnores it if it's not  
 
-## Tests
+**Test Cases:**
+
+| Test Case              | Input                                | Expected Output                               |
+|------------------------|--------------------------------------|-----------------------------------------------|
+|Avoids Leaving          |Colour sensor detects black line      |Robot stops, turns 180 degrees, and keeps going|
+|Detects red/yellow block|Colour sensor detects red/yellow block|Robot picks it up and puts it in the right spot|
+|Detects other block     |Colour sensor detects other block     |Robot stops, turns 90 degrees, and keeps going |
+
+### Non Functional Requirements
+
+For each functional requirement, the robot should aim for these 3 requirements:  
+
+- **Efficiency:** The robot should perform each task with maximum efficiency, such as turning the correct amount and properly picking up blocks on the first try  
+- **Response Time:** The robot should respond to an input within 1 second. The quicker it does that, the better
+- **Accuracy:** The robot should succeed in all of it's tasks on the first attempt. It shouldn't need to constantly make tiny rotations to get back in, or pick up the red and yellow block multiple times
+
+## Code Tests
 
 The test_cases folder has all the test cases created between the 28th of March and the 19th of May (due date).
 
