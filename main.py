@@ -19,9 +19,11 @@ def turn_by_angle(angle): # function for allowing robot to turn around
 
 def navigate_course():
     if Color.RED: # if block is red, it will return to start of course position
-      return_to_start()
+        robot.stop
+    # return_to_start()
     elif Color.YELLOW: # if block is yellow, it will return to start of course position
-      return_to_start()
+        robot.stop
+    # return_to_start()
     else: # if there is no red or yellow block, it will go straight, turn, and then go through navigation again until blocks are found
       robot.straight(500)        
       turn_by_angle(90)
