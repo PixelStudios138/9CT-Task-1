@@ -103,3 +103,7 @@ ev3.speaker.beep()
 robot.turn(-90)
 ev3.speaker.beep()
 ```
+
+## Conclusion
+
+This markdown file has described everything required in this task, from functional and non functional requirements to pseudocode to the actual code and everything inbetween. I have poured my heart and soul into this, and I hope it pays off. Thank you for your time.
