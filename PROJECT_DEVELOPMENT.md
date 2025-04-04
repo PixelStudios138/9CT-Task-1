@@ -53,6 +53,10 @@ For each functional requirement, the robot should aim for these 3 requirements:
 - **Response Time:** The robot should respond to an input within 1 second. The quicker it does that, the better
 - **Accuracy:** The robot should succeed in all of it's tasks on the first attempt. It shouldn't need to constantly make tiny rotations to get back in, or pick up the red and yellow block multiple times
 
+## Pseudocode And Flowcharts
+
+In order to get a proper look at how we're going to handle
+
 ## Code Tests
 
 The test_cases folder has all the test cases created between the 28th of March and the 19th of May (due date).
