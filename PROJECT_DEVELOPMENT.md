@@ -53,6 +53,31 @@ For each functional requirement, the robot should aim for these 3 requirements:
 - **Response Time:** The robot should respond to an input within 1 second. The quicker it does that, the better
 - **Accuracy:** The robot should succeed in all of it's tasks on the first attempt. It shouldn't need to constantly make tiny rotations to get back in, or pick up the red and yellow block multiple times
 
+## Pseudocode And Flowcharts
+
+In order to get a proper look at how we're going to handle our code, there is nothing better than pseudocode and flowcharts. Here is a flowchart of how the code should work, and underneath will be the respective pseudocode: 
+
+![Flowchart describing the process of the code used in the assessment task](/assessmenttaskpseudocode.png "Flowchart of Assessment Task")
+
+```
+BEGIN
+DECLARE bricksfound: INTEGER
+bricksfound = 0
+DECLARE isOutside: BOOLEAN
+DECLARE coloursensorcolour: STRING
+
+WHILE bricksfound < 2:
+    IF isInside = false:
+        turnAround()
+    ENDIF
+    IF coloursensorcolour = "red" OR coloursensorcolour = "yellow:
+        moveblock()
+    ENDIF
+ENDWHILE
+OUTPUT "All blocks sorted!"
+END
+```
+
 ## Code Tests
 
 The test_cases folder has all the test cases created between the 28th of March and the 19th of May (due date).
@@ -78,3 +103,7 @@ ev3.speaker.beep()
 robot.turn(-90)
 ev3.speaker.beep()
 ```
+
+## Conclusion
+
+This markdown file has described everything required in this task, from functional and non functional requirements to pseudocode to the actual code and everything inbetween. I have poured my heart and soul into this, and I hope it pays off. Thank you for your time.
