@@ -55,9 +55,28 @@ For each functional requirement, the robot should aim for these 3 requirements:
 
 ## Pseudocode And Flowcharts
 
-In order to get a proper look at how we're going to handle our code, there is nothing better than pseudocode and flowcharts. Here is a flowchart of how the code should work: 
+In order to get a proper look at how we're going to handle our code, there is nothing better than pseudocode and flowcharts. Here is a flowchart of how the code should work, and underneath will be the respective pseudocode: 
 
 ![Flowchart describing the process of the code used in the assessment task](/assessmenttaskpseudocode.png "Flowchart of Assessment Task")
+
+```
+BEGIN
+DECLARE bricksfound: INTEGER
+bricksfound = 0
+DECLARE isOutside: BOOLEAN
+DECLARE coloursensorcolour: STRING
+
+WHILE bricksfound < 2:
+    IF isInside = false:
+        turnAround()
+    ENDIF
+    IF coloursensorcolour = "red" OR coloursensorcolour = "yellow:
+        moveblock()
+    ENDIF
+ENDWHILE
+OUTPUT "All blocks sorted!"
+END
+```
 
 ## Code Tests
 
