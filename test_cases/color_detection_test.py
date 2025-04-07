@@ -10,21 +10,33 @@ ev3 = EV3Brick()
 
 left_motor = Motor(Port.B)
 right_motor = Motor(Port.C)
-color_sensor = ColorSensor(Port.S3)
-color_sensor.detectable_colors([Color.RED, Color.YELLOW])
+color_sensor = ColorSensor(Port.S4)
 
 robot = DriveBase(left_motor, right_motor, wheel_diameter=55.5, axle_track=104)
 
-while True:
-    detected_color = color_sensor.color()
+turn_angles = []
 
-    if detected_color == Color.RED:
-        robot.straight(10)
-        robot.stop()
-    elif detected_color == Color.YELLOW:
-        robot.straight(10)
-        robot.stop()
+def get_color():
+    detected_color = color_sensor.color()
+    if detected_color is None:
+        return None  
+    return detected_color
+
+def turn_by_angle(angle): 
+    robot.turn(angle)
+    robot.stop()
+    turn_angles.append(angle)
+    navigate_course()
+
+def navigate_course():
+    detected_color = get_color()
+
+    if detected_color in [Color.RED, Color.YELLOW]:
+        robot.stop() # use gyro sensor to retrace steps, i.e moving block to starting position
     else:
         robot.straight(500)
-        robot.stop()
+        turn_by_angle(90)
 
+
+while True:
+    navigate_course()
