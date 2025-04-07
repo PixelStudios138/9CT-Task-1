@@ -24,6 +24,7 @@ def get_color():
 
 def turn_by_angle(angle): 
     robot.turn(angle)
+    robot.straight(500)
     robot.stop()
     turn_angles.append(angle)
     navigate_course()
@@ -34,7 +35,6 @@ def navigate_course():
     if detected_color in [Color.RED, Color.YELLOW]:
         robot.stop() # use gyro sensor to retrace steps, i.e moving block to starting position
     else:
-        robot.straight(500)
         turn_by_angle(90)
 
 
