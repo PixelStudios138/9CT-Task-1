@@ -32,7 +32,7 @@ For this assessment task, we will need to write a program for the Lego EV3 robot
 **Action:** The robot stops, turns 180 degrees and keeps going  
 **Expected Outcome** The robot re-enters the playing field and keeps going  
   
-**Scenario 2:** The robot is detects a block  
+**Scenario 2:** The robot detects a block  
 **Inputs:** The ultrasonic sensor detects the brick, the colour sensor detects the colour  
 **Action:** The robot checks what colour it is, and if it's red or yellow, picks it up and moves it to the designated area, if not, it turns 90 degrees and keeps going  
 **Expected Outcome** The robot sorts the block if it's red or yellow, and ingnores it if it's not  
