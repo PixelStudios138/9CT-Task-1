@@ -11,8 +11,13 @@ ev3 = EV3Brick()
 left_motor = Motor(Port.B)
 right_motor = Motor(Port.C)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 color_sensor1 = ColorSensor(Port.S4)
 color_sensor2 = ColorSensor(Port.S3)
+=======
+color_sensor = ColorSensor(Port.S3)
+gyro = GyroSensor(Port.S2)
+>>>>>>> Stashed changes
 =======
 color_sensor = ColorSensor(Port.S3)
 gyro = GyroSensor(Port.S2)
@@ -29,12 +34,15 @@ def get_color1():
     return detected_color
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 def get_color2():
     detected_color = color_sensor2.color()
     if detected_color is None:
         return None
     return detected_color
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 =======
 def turn_by_angle(angle): 
@@ -51,6 +59,7 @@ def navigate_course():
     detected_color2 = get_color2()
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     if detected_color1 in [Color.RED, Color.YELLOW]:
         while detected_color2 not in [Color.BLACK]:
             robot.straight()
@@ -59,6 +68,8 @@ def navigate_course():
         robot.turn(90)
         robot.straight(500)
 =======
+=======
+>>>>>>> Stashed changes
     if detected_color in [Color.RED, Color.YELLOW]:
         # while black line has not been crossed, go forward.
         # when it's crossed, move forward 10cm
