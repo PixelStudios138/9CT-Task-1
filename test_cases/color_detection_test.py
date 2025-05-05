@@ -10,8 +10,8 @@ ev3 = EV3Brick()
 
 left_motor = Motor(Port.B)
 right_motor = Motor(Port.C)
-color_sensor1 = ColorSensor(Port.S4)
-color_sensor2 = ColorSensor(Port.S3)
+color_sensor1 = ColorSensor(Port.S1)
+color_sensor2 = ColorSensor(Port.S4)
 
 robot = DriveBase(left_motor, right_motor, wheel_diameter=55.5, axle_track=104)
 
@@ -35,11 +35,15 @@ def navigate_course():
 
     if detected_color1 in [Color.RED, Color.YELLOW]:
         while detected_color2 not in [Color.BLACK]:
-            robot.straight()
-        robot.straight(500)
+            
+            robot.straight(100)
+            if detected_color2 == Color.BLACK:
+                print("over the line")
+                break
+        #robot.straight(50)
+        robot.stop()
     else:
-        robot.turn(90)
-        robot.straight(500)
+        robot.straight(100)
 
 while True:
     navigate_course()
