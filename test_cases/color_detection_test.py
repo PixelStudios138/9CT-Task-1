@@ -50,6 +50,8 @@ def navigate_course():
             robot.turn(200)
             robot.straight(70)
         else:
+            robot.straight(70)
+            robot.turn(15)
             if detected_color1 in [Color.RED, Color.YELLOW]:
                 while detected_color2 not in [Color.BLACK]:
                     detected_color2 = get_color2()
@@ -59,8 +61,5 @@ def navigate_course():
                         robot.stop()
                         robot.turn(200)
                         robot.straight(100)
-            else:
-                robot.straight(70)
-                robot.turn(15)
 while True:
     navigate_course()
