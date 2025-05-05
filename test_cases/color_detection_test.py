@@ -35,7 +35,7 @@ def navigate_course():
 
     if detected_color1 in [Color.RED, Color.YELLOW]:
         while detected_color2 not in [Color.BLACK]:
-            
+            detected_color2 = get_color2()
             robot.straight(100)
             if detected_color2 == Color.BLACK:
                 print("over the line")
