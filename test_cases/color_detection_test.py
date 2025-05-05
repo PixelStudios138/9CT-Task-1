@@ -39,9 +39,8 @@ def navigate_course():
             robot.straight(100)
             if detected_color2 == Color.BLACK:
                 print("over the line")
-                break
+                robot.stop()
         #robot.straight(50)
-        robot.stop()
     else:
         robot.straight(100)
 
