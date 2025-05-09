@@ -16,6 +16,8 @@ color_sensor2 = ColorSensor(Port.S4)
 
 robot = DriveBase(left_motor, right_motor, wheel_diameter=55.5, axle_track=104)
 
+plus_or_minus = [1, -1]
+
 def get_color1():
     detected_color = color_sensor1.color()
     if detected_color is None:
@@ -51,10 +53,17 @@ def navigate_course():
             robot.turn(200)
             robot.straight(70)
         else:
-            rand_num = random.uniform(0,360)
-            robot.straight(50)
-            robot.turn(rand_num)
-            print(rand_num)
+            rand_num = random.uniform(0, 180)
+            rand_num1 = random.choice(plus_or_minus)
+            if rand_num1 == 1:
+                robot.straight(100)
+                robot.turn(rand_num)
+            elif rand_num1 == -1:
+                robot.straight(100)
+                robot.turn(-rand_num)
+            else:
+                print("error")
+            
             if detected_color1 in [Color.RED, Color.YELLOW]:
                 while detected_color2 not in [Color.BLACK]:
                     detected_color2 = get_color2()
