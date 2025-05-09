@@ -5,6 +5,7 @@ from pybricks.ev3devices import Motor, ColorSensor
 from pybricks.parameters import Port, Color
 from pybricks.tools import wait
 from pybricks.robotics import DriveBase
+import random
 
 ev3 = EV3Brick()
 
@@ -50,8 +51,10 @@ def navigate_course():
             robot.turn(200)
             robot.straight(70)
         else:
-            robot.straight(70)
-            robot.turn(15)
+            rand_num = random.uniform(0,360)
+            robot.straight(50)
+            robot.turn(rand_num)
+            print(rand_num)
             if detected_color1 in [Color.RED, Color.YELLOW]:
                 while detected_color2 not in [Color.BLACK]:
                     detected_color2 = get_color2()
