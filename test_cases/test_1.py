@@ -38,3 +38,5 @@ def return_to_start(): # when block is found, it will be taken back to the posit
     navigate_course()
 
 navigate_course()
+
+# the following is for random turns if needed

@@ -53,13 +53,13 @@ def navigate_course():
             robot.turn(200)
             robot.straight(70)
         else:
-            rand_num = random.uniform(0, 180)
+            rand_num = random.uniform(0, 120)
             rand_num1 = random.choice(plus_or_minus)
             if rand_num1 == 1:
-                robot.straight(100)
+                robot.straight(120)
                 robot.turn(rand_num)
             elif rand_num1 == -1:
-                robot.straight(100)
+                robot.straight(120)
                 robot.turn(-rand_num)
             else:
                 print("error")
