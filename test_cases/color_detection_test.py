@@ -18,19 +18,28 @@ robot = DriveBase(left_motor, right_motor, wheel_diameter=55.5, axle_track=104)
 
 plus_or_minus = [1, -1]
 
-def get_color1(): # gets colour value from color_sensor1 (block detector)
+def get_color1():
+    ''' 
+    gets colour value from color_sensor1 (block detector)
+    '''
     detected_color = color_sensor1.color()
     if detected_color is None: # returns nothing if no colour is detected
         return None  
     return detected_color # returns detected colour value
 
-def get_color2(): # gets colour from colour_sensor2 (black line detector)
+def get_color2():
+    '''
+    gets colour from colour_sensor2 (black line detector)
+    '''
     detected_color = color_sensor2.color() 
     if detected_color is None: # returns nothing if no colour is detected
         return None
     return detected_color # returns detected colour value
 
 def navigate_course():
+    '''
+    robot moves around the field until block is detected, then takes out of field, leaves in black area, and enters back into field
+    '''
     detected_color1 = get_color1() # block detector variable
     detected_color2 = get_color2() # line detector variable
 
