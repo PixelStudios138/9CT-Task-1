@@ -32,10 +32,15 @@ For this assessment task, we will need to write a program for the Lego EV3 robot
 **Action:** The robot stops, turns 180 degrees and keeps going  
 **Expected Outcome** The robot re-enters the playing field and keeps going  
   
-**Scenario 2:** The robot detects a block  
-**Inputs:** The ultrasonic sensor detects the brick, the colour sensor detects the colour  
-**Action:** The robot checks what colour it is, and if it's red or yellow, picks it up and moves it to the designated area, if not, it turns 90 degrees and keeps going  
+**Scenario 2:** The robot detects a block   
+**Inputs:** The colour sensor detects a coloured object in front of it
+**Action:** If the colour is detected as red or yellow, it moves robot to designated position (200mm out of black line). If detected as a different colour, it continues moving onwards indifferently.
 **Expected Outcome** The robot sorts the block if it's red or yellow, and ingnores it if it's not  
+
+**Scenario 3:** The robot has moved red or yellow block to designated position
+**Inputs:** The robot recognises it has moved 200mm beyond the black line
+**Action:** The object will be left at designated position, and the robot will turn around by rougly 180 degrees and then reenter the playing field.
+**Expected Outcome:** The robot, having left the red or yellow block in its deisgnated position, reenters the playing field and continues onward.
 
 **Test Cases:**
 
@@ -59,6 +64,20 @@ In order to get a proper look at how we're going to handle our code, there is no
 
 ![Flowchart describing the process of the code used in the assessment task](/assessmenttaskpseudocode.png "Flowchart of Assessment Task")
 
+Below is the pseudocode for scenario 1:
+```
+BEGIN Scenario 1
+DECLARE coloursensorcolour: STRING
+
+IF coloursensorcolour == "black"
+    turnAround()
+    moveForward()
+ENDIF
+OUTPUT "Inside black line!"
+END Scenario 1
+```
+
+Below is the pseudocode for scenario 2:
 ```
 BEGIN
 DECLARE bricksfound: INTEGER
@@ -77,6 +96,8 @@ ENDWHILE
 OUTPUT "All blocks sorted!"
 END
 ```
+
+Below is the pseudocode for scenario 3:
 
 ## Code Tests
 
