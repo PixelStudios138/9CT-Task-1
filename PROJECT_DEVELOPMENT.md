@@ -86,7 +86,7 @@ DECLARE linecoloursensorcolour: STRING
 IF blockcoloursensorcolour == "red" OR blockcoloursensorcolour == "yelllow" 
     WHILE linecoloursensorcolour != "black"
         moveForward()
-        IF linecoloursensorcolour == "black" THEN
+        IF linecoloursensorcolour == "black" 
             moveForward(200)
             ENDIF
         ENDWHILE
