@@ -38,15 +38,3 @@ def return_to_start(): # when block is found, it will be taken back to the posit
     navigate_course()
 
 navigate_course()
-
-# the following is for random turns if needed
-rand_num = random.uniform(0, 120)
-            rand_num1 = random.choice(plus_or_minus)
-            if rand_num1 == 1:
-                robot.straight(120)
-                robot.turn(rand_num)
-            elif rand_num1 == -1:
-                robot.straight(120)
-                robot.turn(-rand_num)
-            else:
-                print("error")
