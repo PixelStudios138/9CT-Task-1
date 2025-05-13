@@ -136,6 +136,113 @@ robot.turn(-90)
 ev3.speaker.beep()
 ```
 
+### Colour Detection Test
+
+```
+def get_color1():
+    ''' 
+    gets colour value from color_sensor1 (block detector)
+    '''
+    detected_color = color_sensor1.color()
+    if detected_color is None: # returns nothing if no colour is detected
+        return None  
+    return detected_color # returns detected colour value
+
+def get_color2():
+    '''
+    gets colour from colour_sensor2 (black line detector)
+    '''
+    detected_color = color_sensor2.color() 
+    if detected_color is None: # returns nothing if no colour is detected
+        return None
+    return detected_color # returns detected colour value
+
+def colour1_test():
+    '''
+    tests colour_sensor1 (block detector) to see if blocks can be properly identified
+    '''
+
+    detected_color1 = get_color1()
+    
+    if detected_color1 in [Color.RED, Color.YELLOW]:  # turns around if red or yellow block is detected
+        robot.turn(360)
+    else:
+        robot.straight(50) # keeps moving if block is undetected
+
+def colour2_test():
+    '''
+    tests colour_sensor2 (line detector) to see if it knows when breaching black line
+    '''
+    
+    detected_color2 = get_color2()
+
+    if detected_color2 == Color.BLACK: # if breaching black line, robot turns and reenters playing field
+        robot.turn(180)
+        robot.straight(200)
+    else: # keeps slowly moving (to take account of delay factor) until black line is reached
+        robot.straight(20)
+```
+
+### Gyro Test
+```
+turn_angles = []
+
+def turn_by_angle(angle): 
+'''
+gyro controls turning based on inputed angle, and turns are recorded in turn_angles array. This allows all turns to be retraced later.
+'''
+
+    gyro.reset_angle(0)
+    if angle > 0:  # clockwise 
+        while gyro.angle() < angle:
+            robot.drive(0, 50)
+    else:  # counterclockwise
+        while gyro.angle() > angle:
+            robot.drive(0, -50)
+    robot.stop()
+    turn_angles.append(angle)  # Record the turn
+
+def navigate_course():
+'''
+  Returns to starting position to drop red or yellow block (if identified), otherwise continues moving around playing field
+'''
+
+    if Color.RED: # if block is red, it will return to start of course position
+      return_to_start()
+    elif Color.YELLOW: # if block is yellow, it will return to start of course position
+      return_to_start()
+    else: # if there is no red or yellow block, it will go straight, turn, and then go through navigation again until blocks are found
+      robot.straight(500)        
+      turn_by_angle(90)
+      navigate_course()
+
+def return_to_start():
+'''
+Retraces all previous movements, back to starting position
+'''
+
+    for angle in reversed(turn_angles):  # reverses its course to start position
+        turn_by_angle(-angle)  
+    navigate_course()
+
+navigate_course()
+```
+
+# Random Turning Test
+
+```
+rand_num = random.uniform(0, 120) # turns anywhere within 120 degree scope
+rand_num1 = random.choice(plus_or_minus)
+if rand_num1 == 1: # clockwise turn
+  robot.straight(120)
+  robot.turn(rand_num)
+elif rand_num1 == -1: # anticlockwise turn
+  robot.straight(120)
+  robot.turn(-rand_num)
+else:
+  print("error") # if failed to run
+```
+
 ## Conclusion
 
 This markdown file has described everything required in this task, from functional and non functional requirements to pseudocode to the actual code and everything inbetween. I have poured my heart and soul into this, and I hope it pays off. Thank you for your time.
