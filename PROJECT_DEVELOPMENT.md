@@ -48,7 +48,7 @@ For this assessment task, we will need to write a program for the Lego EV3 robot
 |------------------------|--------------------------------------|-----------------------------------------------|
 |Avoids Leaving          |Colour sensor detects black line      |Robot stops, turns 180 degrees, and keeps going|
 |Detects red/yellow block|Colour sensor detects red/yellow block|Robot picks it up and puts it in the right spot|
-|Detects other block     |Colour sensor detects other block     |Robot stops, turns 90 degrees, and keeps going |
+|Has moved block         |Code has been fulfilled               |Robot turns 180 degrees and reenters field     |
 
 ### Non Functional Requirements
 
