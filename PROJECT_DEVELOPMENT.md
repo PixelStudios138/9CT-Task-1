@@ -103,9 +103,10 @@ DECLARE blockDelivered: BOOLEAN
 WHILE blockDelivered
     turnAround()
     moveForward()
+    blockDelivered = FALSE
 ENDWHILE
 OUTPUT "Back in playing field!"
-END Scenerio 3
+END Scenario 3
 ```
 
 ## Code Tests
