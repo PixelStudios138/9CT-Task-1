@@ -60,8 +60,8 @@ def navigate_course():
             robot.turn(200)
             robot.straight(70)
         else: # moves around until block is detected
-            robot.straight(70) 
-            robot.turn(35)
+            robot.straight(30) 
+            robot.turn(20)
             
             if detected_color1 in [Color.RED, Color.YELLOW]: # same purpose as this code above
                 while detected_color2 not in [Color.BLACK]:
