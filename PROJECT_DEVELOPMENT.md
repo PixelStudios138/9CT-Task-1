@@ -79,25 +79,34 @@ END Scenario 1
 
 Below is the pseudocode for scenario 2:
 ```
-BEGIN
-DECLARE bricksfound: INTEGER
-bricksfound = 0
-DECLARE isOutside: BOOLEAN
-DECLARE coloursensorcolour: STRING
+BEGIN Scenario 2
+DECLARE blockcoloursensorcolour: STRING
+DECLARE linecoloursensorcolour: STRING
 
-WHILE bricksfound < 2:
-    IF isInside = false:
-        turnAround()
-    ENDIF
-    IF coloursensorcolour = "red" OR coloursensorcolour = "yellow:
-        moveblock()
-    ENDIF
-ENDWHILE
-OUTPUT "All blocks sorted!"
-END
+IF blockcoloursensorcolour == "red" OR blockcoloursensor == "yelllow" 
+    WHILE linecoloursensorcolour != "black"
+        moveForward()
+        IF linecoloursensorcolour = "black" THEN
+            moveForward(200)
+            ENDIF
+            ENDWHILE
+
+OUTPUT "Block is sorted!"
+END Scenario 2
 ```
 
 Below is the pseudocode for scenario 3:
+```
+BEGIN Scenario 3
+DECLARE blockDelivered: BOOLEAN
+
+WHILE blockDelivered
+    turnAround()
+    moveForward()
+ENDWHILE
+OUTPUT "Back in playing field!"
+END Scenerio 3
+```
 
 ## Code Tests
 
