@@ -88,6 +88,7 @@ IF blockcoloursensorcolour == "red" OR blockcoloursensorcolour == "yelllow"
         moveForward()
         IF linecoloursensorcolour == "black" 
             moveForward(200)
+            stopMovement()
             ENDIF
         ENDWHILE
 
