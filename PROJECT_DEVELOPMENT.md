@@ -245,4 +245,4 @@ else:
 
 ## Conclusion
 
-This markdown file has described everything required in this task, from functional and non functional requirements to pseudocode to the actual code and everything inbetween. I have poured my heart and soul into this, and I hope it pays off. Thank you for your time.
+This markdown file has described everything required in this task, from functional and non functional requirements to pseudocode to the actual code and everything inbetween.We have poured our hearts and souls into this, and we hope it pays off. Thank you for your time.
