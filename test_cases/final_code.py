@@ -16,8 +16,6 @@ color_sensor2 = ColorSensor(Port.S4)
 
 robot = DriveBase(left_motor, right_motor, wheel_diameter=55.5, axle_track=104)
 
-plus_or_minus = [1, -1]
-
 def get_color1():
     ''' 
     gets colour value from color_sensor1 (block detector)
