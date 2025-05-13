@@ -83,13 +83,13 @@ BEGIN Scenario 2
 DECLARE blockcoloursensorcolour: STRING
 DECLARE linecoloursensorcolour: STRING
 
-IF blockcoloursensorcolour == "red" OR blockcoloursensor == "yelllow" 
+IF blockcoloursensorcolour == "red" OR blockcoloursensorcolour == "yelllow" 
     WHILE linecoloursensorcolour != "black"
         moveForward()
-        IF linecoloursensorcolour = "black" THEN
+        IF linecoloursensorcolour == "black" THEN
             moveForward(200)
             ENDIF
-            ENDWHILE
+        ENDWHILE
 
 OUTPUT "Block is sorted!"
 END Scenario 2
