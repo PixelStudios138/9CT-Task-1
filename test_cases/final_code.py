@@ -73,4 +73,4 @@ def navigate_course():
                         robot.turn(200)
                         robot.straight(100)
 while True:
-    navigate_course() # begins with navigate course functio
+    navigate_course() # begins with navigate course function
