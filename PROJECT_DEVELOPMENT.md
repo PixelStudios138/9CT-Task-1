@@ -233,7 +233,7 @@ Retraces all previous movements, back to starting position
 navigate_course()
 ```
 
-# Random Turning Test
+### Random Turning Test
 
 This block of code would make the turns random, with each turn anywhere from 1 to 120 degrees either clockwise or anticlockwise. This would allow the robot a wider coverage, yet we also found it to be too slow, and so we made the final code control the robot's movements through predetermined angles.
 
@@ -248,6 +248,71 @@ elif rand_num1 == -1: # anticlockwise turn
   robot.turn(-rand_num)
 else:
   print("error") # if failed to run
+```
+
+### Final Code
+
+This is the end code that we have decided on. It will detect the colours in the same manner as was shown in the colour detection test. It will move around in something like a circle until it either goes over the black line (or into the black area), in which case it will turn around and reenter the field, or until it detects a red or yellow block (it will ignore other blocks), in which case it will move the block 200mm outside of the black line. 
+
+```
+def get_color1():
+    ''' 
+    gets colour value from color_sensor1 (block detector)
+    '''
+    detected_color = color_sensor1.color()
+    if detected_color is None: # returns nothing if no colour is detected
+        return None  
+    return detected_color # returns detected colour value
+
+def get_color2():
+    '''
+    gets colour from colour_sensor2 (black line detector)
+    '''
+    detected_color = color_sensor2.color() 
+    if detected_color is None: # returns nothing if no colour is detected
+        return None
+    return detected_color # returns detected colour value
+
+def navigate_course():
+    '''
+    robot moves around the field until block is detected, then takes out of field, leaves in black area, and enters back into field
+    '''
+    detected_color1 = get_color1() # block detector variable
+    detected_color2 = get_color2() # line detector variable
+
+    if detected_color1 in [Color.RED, Color.YELLOW]:
+        while detected_color2 not in [Color.BLACK]: # once block is detected, move forward until black line is reached
+            detected_color2 = get_color2()
+            robot.straight(30)
+            if detected_color2 == Color.BLACK: # once black line is reached, move forward by 200, place down block, and then move back into the field
+                print("over the line")
+                robot.stop()
+                robot.turn(200)
+                robot.straight(100)
+
+    else:
+        detected_color1 = get_color1() # block detector variable
+        detected_color2 = get_color2() # line detector variable
+
+        if detected_color2 == Color.BLACK: # if it reaches the black area, it will turn back and enter back into the field
+            robot.stop()
+            robot.turn(200)
+            robot.straight(70)
+        else: # moves around until block is detected
+            robot.straight(30) 
+            robot.turn(20)
+            
+            if detected_color1 in [Color.RED, Color.YELLOW]: # same purpose as this code above
+                while detected_color2 not in [Color.BLACK]:
+                    detected_color2 = get_color2()
+                    robot.straight(30)
+                    if detected_color2 == Color.BLACK:
+                        print("over the line")
+                        robot.stop()
+                        robot.turn(200)
+                        robot.straight(100)
+while True:
+    navigate_course() # begins with navigate course function
 ```
 
 ## Conclusion
