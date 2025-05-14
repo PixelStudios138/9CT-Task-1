@@ -138,6 +138,8 @@ ev3.speaker.beep()
 
 ### Colour Detection Test
 
+This second test is for the two colour sensors. Both functions will detect the colour in front of it. If there is, it will return that colour, and, if not, it will return nothing. The first colour sensor detects any coloured object, specifically a block, and, if it is yellow or red, will do turn in a complete revolution (if not, it will keep moving). The second colour sensor detects the black line and, if detected, will turn around to reenter the playing field.
+
 ```
 def get_color1():
     ''' 
@@ -184,6 +186,9 @@ def colour2_test():
 ```
 
 ### Gyro Test
+
+This was the early code for using a gyro sensor to manage movements. It would use the gyro sensor to control the turns (as inputed in the navigate_course function), and store them in an array. Upon detecting a red or yellow block, it would retrace all the turns made, by doing the opposite of the stored turns. This code is incomplete, and has been left as such since we decided to change how we would move the blocks. 
+
 ```
 turn_angles = []
 
@@ -230,6 +235,8 @@ navigate_course()
 
 # Random Turning Test
 
+This block of code would make the turns random, with each turn anywhere from 1 to 120 degrees either clockwise or anticlockwise. This would allow the robot a wider coverage, yet we also found it to be too slow, and so we made the final code control the robot's movements through predetermined angles.
+
 ```
 rand_num = random.uniform(0, 120) # turns anywhere within 120 degree scope
 rand_num1 = random.choice(plus_or_minus)
@@ -245,4 +252,4 @@ else:
 
 ## Conclusion
 
-This markdown file has described everything required in this task, from functional and non functional requirements to pseudocode to the actual code and everything inbetween.We have poured our hearts and souls into this, and we hope it pays off. Thank you for your time.
+This markdown file has described everything required in this task, from functional and non functional requirements to pseudocode to the actual code and everything inbetween. We have poured our hearts and souls into this, and we hope it pays off. Thank you for your time.
