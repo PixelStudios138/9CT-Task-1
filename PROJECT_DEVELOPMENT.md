@@ -33,14 +33,14 @@ For this assessment task, we will need to write a program for the Lego EV3 robot
 **Expected Outcome** The robot re-enters the playing field and keeps going  
   
 **Scenario 2:** The robot detects a block   
-**Inputs:** The colour sensor detects a coloured object in front of it
-**Action:** If the colour is detected as red or yellow, it moves robot to designated position (200mm out of black line). If detected as a different colour, it continues moving onwards indifferently.
+**Inputs:** The colour sensor detects a coloured object in front of it  
+**Action:** If the colour is detected as red or yellow, it moves robot to designated position (200mm out of black line). If detected as a different colour, it continues moving onwards indifferently.  
 **Expected Outcome** The robot sorts the block if it's red or yellow, and ingnores it if it's not  
 
-**Scenario 3:** The robot has moved red or yellow block to designated position
-**Inputs:** The robot recognises it has moved 200mm beyond the black line
-**Action:** The object will be left at designated position, and the robot will turn around by rougly 180 degrees and then reenter the playing field.
-**Expected Outcome:** The robot, having left the red or yellow block in its deisgnated position, reenters the playing field and continues onward.
+**Scenario 3:** The robot has moved red or yellow block to designated position  
+**Inputs:** The robot recognises it has moved 200mm beyond the black line  
+**Action:** The object will be left at designated position, and the robot will turn around by rougly 180 degrees and then reenter the playing field.  
+**Expected Outcome:** The robot, having left the red or yellow block in its deisgnated position, reenters the playing field and continues onward.  
 
 **Test Cases:**
 
