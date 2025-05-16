@@ -250,7 +250,7 @@ else:
   print("error") # if failed to run
 ```
 
-### Final Code
+## Final Code
 
 This is the end code that we have decided on. It will detect the colours in the same manner as was shown in the colour detection test. It will move around in something like a circle until it either goes over the black line (or into the black area), in which case it will turn around and reenter the field, or until it detects a red or yellow block (it will ignore other blocks), in which case it will move the block 200mm outside of the black line. 
 
@@ -314,7 +314,7 @@ def navigate_course():
 while True:
     navigate_course() # begins with navigate course function
 ```
-
+ 
 ## Conclusion
 
 This markdown file has described everything required in this task, from functional and non functional requirements to pseudocode to the actual code and everything inbetween. We have poured our hearts and souls into this, and we hope it pays off. Thank you for your time.
