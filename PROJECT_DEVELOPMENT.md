@@ -60,9 +60,13 @@ For each functional requirement, the robot should aim for these 3 requirements:
 
 ## Pseudocode And Flowcharts
 
-In order to get a proper look at how we're going to handle our code, there is nothing better than pseudocode and flowcharts. Here is a flowchart of how the code should work, and underneath will be the respective pseudocode: 
+In order to get a proper look at how we're going to handle our code, there is nothing better than pseudocode and flowcharts. Here are 3 flowcharts of how the code should work, and underneath will be the respective pseudocode for each one: 
 
-![Flowchart describing the process of the code used in the assessment task](/assessmenttaskpseudocode.png "Flowchart of Assessment Task")
+![Flowchart describing the process of the code used in the assessment task](/flowcharts/Scenario1.png "Flowchart of Scenario 1")  
+
+![Flowchart describing the process of the code used in the assessment task](/flowcharts/Scenario2.png "Flowchart of Scenario 2")  
+
+![Flowchart describing the process of the code used in the assessment task](/flowcharts/Scenario3.png "Flowchart of Scenario 3")  
 
 Below is the pseudocode for scenario 1:
 ```
